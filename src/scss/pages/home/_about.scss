@@ -1,0 +1,91 @@
+@use '../../utilities/responsive';
+
+.about {
+    background-color: var(--color-light);
+    height: 100vh;
+    display: flex;
+    padding: 16px;
+    color: var(--color-light);
+
+        //Responsive
+        @include responsive.max(62.5rem) {
+            padding: 8px;
+        }
+
+    &__inner {
+        background-image: url(assets/images/bgabout.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        padding: var(--gap-xl);
+
+
+    }
+
+    &__main {
+        padding: var(--gap-xl); 
+
+        @include responsive.max(30rem) {
+            padding: var(--gap-xl) var(--gap-xl);
+        }
+    }
+
+    &__content {
+        max-width: 52rem;
+        width: 100%;
+    }
+
+
+
+}
+
+.bearbeer {
+    font-size: (var(--font-size-3));
+
+    @include responsive.max(30rem) {
+        font-size: var(--font-size-1);
+    }
+    
+
+    &__title {
+        height: var(--gap-s);
+        padding: 0;
+        margin: 0;
+        font-size: clamp(2rem, 1vw, 2rem);
+
+    }
+
+    &__subtitle {
+        margin: 0px;
+        padding: 0px;
+        font-weight: 300;
+        margin: 0 0 0 0 ;
+        color: var(--color-accent);
+        font-size: clamp( var(--font-size-3), 3vw, var(--font-size-4) );
+        font-style: italic;
+    }
+}
+
+.gallery {
+    display: flex;
+    padding: 4rem;
+    max-width: max-content;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .picture {
+        flex: 1;
+        max-width: 33%;
+        padding: 20px;
+    }
+}
+
+img {
+    border-radius: 100%;
+    opacity: 0.65;
+}
